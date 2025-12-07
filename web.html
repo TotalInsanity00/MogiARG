@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Password → Poem Page</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: "Georgia", serif;
+      background: #f4f4f4;
+    }
+
+    #page1 {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: #111;
+      color: white;
+    }
+
+    #page1 input {
+      padding: 10px 14px;
+      font-size: 1.1rem;
+      border: none;
+      border-radius: 4px;
+      margin-top: 12px;
+      outline: none;
+    }
+
+    #page1 button {
+      margin-top: 20px;
+      padding: 10px 18px;
+      border: none;
+      background: white;
+      color: #111;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+    #page2 {
+      display: none;
+      height: 100vh;
+      padding: 40px;
+      background: #000000;
+      color: #ffffff;
+      box-sizing: border-box;
+      position: relative;
+      overflow: hidden;
+      text-align: center;
+    }
+
+    #mainText {
+      font-size: .9rem;
+      max-width: 400px;
+      margin: 80px auto 0 auto;
+      z-index: 3;
+      position: relative;
+      background: black;
+      color: white;
+      padding: 60px;
+      border: 2px solid white;
+    }
+
+    .side-poem {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 80px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      writing-mode: vertical-rl;
+      text-orientation: mixed;
+      font-size: 1.1rem;
+      opacity: 0.85;
+      z-index: 2;
+      color: white;
+    }
+
+    #leftPoem {
+      left: 32vw;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    #rightPoem {
+      right: 32vw;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    .rosemary {
+      position: absolute;
+      width: 33vw;
+      height: 100vh;
+      object-fit: cover;
+      top: 0;
+      opacity: .2;
+      z-index: 0;
+    }
+
+    #leftRosemary {
+      left: 0;
+      top: 0;
+    }
+
+    #rightRosemary {
+      right: 0;
+      top: 0;
+      transform: scaleX(-1);
+    }
+
+    .horizontal-poem {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 1.1rem;
+      opacity: 0.85;
+      color: white;
+      z-index: 3;
+      writing-mode: horizontal-tb;
+    }
+
+    #topPoem {
+      top: 20px;
+    }
+
+    #bottomPoem {
+      bottom: 20px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div id="page1">
+    <h2>Enter Phrase</h2>
+    <input id="passwordInput" type="text" placeholder="Type the phrase..." />
+    <button onclick="checkPassword()">Enter</button>
+  </div>
+
+  <!-- PAGE 2 -->
+  <div id="page2">
+    <div id="leftPoem" class="side-poem">seil regnuh erehw dlog stnuoc driht ehT</div>
+    <div id="rightPoem" class="side-poem">thgif nosmirc ni dlrow eht sehtab txen ehT</div>
+
+    <img id="leftRosemary" class="rosemary"
+      src="https://celebratednest.com/wp-content/uploads/2025/04/flowering_rosemary.png" />
+    <img id="rightRosemary" class="rosemary"
+      src="https://celebratednest.com/wp-content/uploads/2025/04/flowering_rosemary.png" />
+
+    <div id="topPoem" class="horizontal-poem">seiks ytpme ylno sevael tsal eht dnA</div>
+    <div id="mainText">
+      <p style="text-align:center;">
+        To my dearest friend, [REDACTED]
+      </p>
+      <p style="text-align:center;">
+        I pray this letter reaches you swiftly, for time, I fear, is no longer a luxury I possess.<br>
+        I write to you under the veil of twilight, my candle trembling as though it too senses the urgency that presses
+        upon my heart.
+      </p>
+      <p style="text-align:center;">
+        I, [REDACTED], am writing this invitation not under the intent of a ceremony nor a courtesy, but a silent plea
+      </p>
+      <p style="text-align:center; font-style:italic;">
+        You must [REDACTED] me
+      </p>
+      <p style="text-align:center;">
+        Do not announce your arrival. Do not speak my name aloud. You must understand: I cannot remain here much longer.
+        I have stumbled upon a secret which no one should have uncovered. They seek to silence me. Not for what I have
+        done, but for what I have the power to do.<br>
+        What pursues me, I do not yet fully know—but I know it draws nearer with each passing hour.
+      </p>
+      <p style="text-align:center;">
+        Of all souls left to me, I trust only you.<br>
+        Follow the trail I have left behind<br>
+        I will meet you at the [REDACTED]<br>
+        If it is truly you, you will know the way.
+      </p>
+      <p style="text-align:center;">
+        Please make haste, my dearest friend.<br>
+        I cannot say if this letter will be my last<br>
+        But I must warn you, whatever you do–
+      </p>
+      <p style="text-align:center; font-style:italic;">
+        uc fsf ffjcco xte kprwd sr tyc icki
+      </p>
+      <p style="text-align:center;">
+        R. de Montmorency
+      </p>
+    </div>
+    <div id="bottomPoem" class="horizontal-poem">thgis ni yrotciv htiw semoc tsrif ehT</div>
+  </div>
+
+  <script>
+    const code = "9536ebe04cdc22c24db6fc23971565ddc68c6dacfa5738315e8b3ce1dd91212f";
+
+    if (localStorage.getItem("poemUnlocked") === "true") {
+      document.getElementById("page1").style.display = "none";
+      document.getElementById("page2").style.display = "block";
+    }
+
+    function normalize(str) {
+      return str
+        .toLowerCase()
+        .replace(/['’]/g, "")        
+        .replace(/\s+/g, " ")        
+        .trim();                    
+    }
+
+    async function sha256(message) {
+      const msgBuffer = new TextEncoder().encode(message);
+      const hashBuffer = await crypto.subtle.digest("SHA-256", msgBuffer);
+      const hashArray = Array.from(new Uint8Array(hashBuffer));
+      const hashHex = hashArray.map(b => b.toString(16).padStart(2, "0")).join("");
+      return hashHex;
+    }
+
+    async function checkPassword() {
+      const raw = document.getElementById("passwordInput").value;
+      const input = normalize(raw);      // cleaned version
+      const inputHash = await sha256(input);
+
+      if (inputHash === code) {
+        localStorage.setItem("poemUnlocked", "true");
+        document.getElementById("page1").style.display = "none";
+        document.getElementById("page2").style.display = "block";
+      } else {
+        alert("Incorrect phrase.");
+      }
+    }
+  </script>
+</body>
+
+</html>
