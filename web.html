@@ -41,6 +41,7 @@
       cursor: pointer;
       font-size: 1rem;
     }
+
     #page2 {
       display: none;
       height: 100vh;
@@ -132,6 +133,23 @@
     #bottomPoem {
       bottom: 20px;
     }
+
+    .secret-link {
+      color: inherit;
+      /* Same color as surrounding text */
+      text-decoration: none;
+      /* No underline */
+      cursor: default;
+      /* Not clickable-looking yet */
+      transition: 0.2s ease;
+    }
+
+    .secret-link:hover {
+      color: #8ebeff;
+      /* subtle standout color on hover (change if you want) */
+      text-decoration: underline;
+      cursor: pointer;
+    }
   </style>
 </head>
 
@@ -178,7 +196,7 @@
       <p style="text-align:center;">
         Of all souls left to me, I trust only you.<br>
         Follow the trail I have left behind<br>
-        I will meet you at the [REDACTED]<br>
+        I will meet you at the <a href="password.html" class="secret-link">[REDACTED]</a><br>
         If it is truly you, you will know the way.
       </p>
       <p style="text-align:center;">
@@ -207,9 +225,9 @@
     function normalize(str) {
       return str
         .toLowerCase()
-        .replace(/['’]/g, "")        
-        .replace(/\s+/g, " ")        
-        .trim();                    
+        .replace(/['’]/g, "")
+        .replace(/\s+/g, " ")
+        .trim();
     }
 
     async function sha256(message) {
